@@ -50,15 +50,4 @@ Ouvrez `frontend/index.html` dans votre navigateur (double-clic), puis utilisez 
 > ```
 > Puis ouvrez http://localhost:8000
 
-## 🧾 Ajouter ce projet à votre CV
-Mentionnez-le comme un projet personnel / de démonstration avec les points suivants :
-- Implémentation d'un calculateur de prêt (annuité, amortissement)
-- Génération d'un tableau d'amortissement détaillé
-- API REST avec Flask (Python)
-- Frontend HTML/CSS/JavaScript (formulaire + affichage de résultats)
 
-## 📚 À améliorer / prochaines étapes
-- Ajout de tests unitaires (pytest)
-- Authentification (connexion utilisateur)
-- Export du tableau d'amortissement en PDF/Excel
-- Graphiques (matplotlib / chart.js)
