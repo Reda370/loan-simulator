@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulateur d'Emprunt - Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Simulateur d'Emprunt / Prêt</h1>
+      <p>Entrez les paramètres ci-dessous, puis cliquez sur <strong>Calculer</strong>.</p>
+    </header>
+
+    <section class="card">
+      <h2>Saisie des paramètres</h2>
+      <form id="loan-form">
+        <div class="grid">
+          <label>
+            Capital emprunté (€)
+            <input type="number" step="0.01" name="principal" required />
+          </label>
+          <label>
+            Taux annuel (%)
+            <input type="number" step="0.01" name="annual_rate" required />
+          </label>
+          <label>
+            Durée (années)
+            <input type="number" min="0" step="1" name="years" />
+          </label>
+          <label>
+            Durée (mois)
+            <input type="number" min="0" step="1" name="months" />
+          </label>
+          <label>
+            Montant remboursé périodique (€)
+            <input type="number" step="0.01" name="payment" />
+          </label>
+          <label>
+            Périodicité
+            <select name="frequency">
+              <option value="mensuelle">Mensuelle</option>
+              <option value="trimestrielle">Trimestrielle</option>
+              <option value="annuelle">Annuelle</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit">Calculer</button>
+      </form>
+    </section>
+
+    <section id="result" class="card hidden">
+      <h2>Résultats</h2>
+      <div class="result-grid">
+        <div><strong>Capital emprunté :</strong> <span id="res-principal"></span></div>
+        <div><strong>Taux annuel :</strong> <span id="res-rate"></span></div>
+        <div><strong>Périodicité :</strong> <span id="res-frequency"></span></div>
+        <div><strong>Durée estimée :</strong> <span id="res-duration"></span></div>
+        <div><strong>Mensualité (paiement) :</strong> <span id="res-payment"></span></div>
+      </div>
+
+      <h3>Tableau d'amortissement</h3>
+      <div class="table-container">
+        <table id="amort-table">
+          <thead>
+            <tr>
+              <th>Mois</th>
+              <th>Capital avant</th>
+              <th>Intérêts</th>
+              <th>Capital remboursé</th>
+              <th>Remboursement</th>
+              <th>Capital après</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="error" class="card hidden">
+      <h2>Erreur</h2>
+      <p id="error-msg"></p>
+    </section>
+
+    <footer>
+      <p>Backend attendu sur <code>http://localhost:5000/api/calculate</code></p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
